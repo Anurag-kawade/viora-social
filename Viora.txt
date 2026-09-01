@@ -1,0 +1,15 @@
+==> Authentication 
+   => register
+   => login
+   => logout (Token Blacklisting)
+   => [OTP based registeration]
+
+==> post
+   => create 
+   => can see the feed
+   => like posts
+   => save posts
+
+==> users
+   => followers
+   => following
