@@ -1,0 +1,51 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+  gap: 1.5rem;
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    min-width: 22rem;
+
+    input {
+      padding-inline: 1.5rem;
+      padding-block: 0.8rem;
+      border-radius: 1rem;
+      border: none;
+      outline: none;
+      font-size: medium;
+    }
+
+    button {
+      padding-inline: 1rem;
+      padding-block: 0.5rem;
+      color: whitesmoke;
+      background-color: rgb(13, 13, 168);
+      border-radius: 1rem;
+      border: none;
+      outline: none;
+      padding-block: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
+  a{
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
