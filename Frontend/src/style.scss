@@ -9,7 +9,7 @@ body,
   width: 100%;
 }
 html {
-  background-color: #1d1d1d;
+  background-color: #212020;
   color: rgb(250, 245, 245);
   font-family:
     system-ui,
@@ -23,4 +23,41 @@ html {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+}
+.home-text {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f5;
+  color: #464f5b;
+  font-weight: 500;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.viora {
+  font-weight: 700;
+  margin-left: 0.3em;
+}
+
+.v {
+  color: #8b5cf6;
+}
+
+.i {
+  color: #3b82f6;
+}
+
+.o {
+  color: #06b6d4;
+}
+
+.r {
+  color: #ec4899;
+}
+
+.a {
+  color: #f97316;
 }
