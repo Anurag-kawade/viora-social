@@ -1,31 +1,27 @@
 import "../style/form.scss";
 import { useState } from "react";
-import { Link } from "react-router";
-import axios from "axios";
+import { Link, useNavigate } from "react-router";
+import { useAuth } from "../hooks/useAuth";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { handleRegister, loading } = useAuth();
+  const navigate = useNavigate();
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await axios
-      .post(
-        "http://localhost:3000/api/auth/register",
-        {
-          username,
-          email,
-          password,
-        },
-        {
-          withCredentials: true,
-        },
-      )
-      .then((res) => {
-        console.log(res.data);
-      });
+    await handleRegister(username, email, password).then((res) => {
+      console.log(res);
+      navigate("/login");
+    });
   }
 
   return (
@@ -34,7 +30,7 @@ const Register = () => {
         <h1>Register</h1>
         <form onSubmit={handleSubmit}>
           <input
-            onInput={(e) => {
+            onChange={(e) => {
               setUsername(e.target.value);
             }}
             type="text"
@@ -42,7 +38,7 @@ const Register = () => {
             placeholder="Enter your username"
           />
           <input
-            onInput={(e) => {
+            onChange={(e) => {
               setEmail(e.target.value);
             }}
             type="email"
@@ -50,7 +46,7 @@ const Register = () => {
             placeholder="Enter your email"
           />
           <input
-            onInput={(e) => {
+            onChange={(e) => {
               setPassword(e.target.value);
             }}
             type="password"
