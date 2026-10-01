@@ -120,5 +120,3 @@ module.exports = {
   getFeedController,
 };
 
-
-// implementing post creation , liking , and unliking feature with ui updates
